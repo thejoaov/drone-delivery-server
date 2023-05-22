@@ -15,5 +15,6 @@ RUN yarn build
 FROM node:16
 WORKDIR /app
 COPY --from=builder /app .
-EXPOSE 3000
+EXPOSE ${PORT}
+ENV PORT=${PORT}
 CMD ["yarn", "start"]
